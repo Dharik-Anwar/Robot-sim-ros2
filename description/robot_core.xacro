@@ -2,19 +2,16 @@
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
 
     <material name="white">
-        <color rgba="1 1 1 1"/>
+        <color rgba="1 1 1 1" />
     </material>
-
+    <material name="orange">
+        <color rgba="1 0.3 0.1 1" />
+    </material>
     <material name="blue">
-        <color rgba="0.0 0.0 1.0 0.0"/>
+        <color rgba="0.2 0.2 1 1" />
     </material>
-
-    <material name="red">
-        <color rgba="1.0 0.0 0.0 0.0"/>
-    <material/>
-
     <material name="black">
-        <color rgba="0.0 0.0 0.0 1.0"/>
+        <color rgba="0 0 0 1" />
     </material>
 
     <!-- Base Link -->
@@ -26,19 +23,26 @@
     <!-- Chassis Link-->
 
     <joint name="chassis" type="fixed">
-        <origin xyz="0.0 0.0 0.119" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.0 0.0 0.025" rpy="0.0 0.0 0.0"/>
         <parent link="base_link"/>
         <child link="chassis"/>
     </joint>
 
     <link name="chassis">
         <visual>
-            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <origin xyz="0.0 0.0 0.047" rpy="0.0 0.0 0.0"/>
             <geometry>
-                <box size="0.24 0.30 0.094"/>
+                <box size="0.30 0.24 0.094"/>
             </geometry>
             <material name="white"/>
         </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.047" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <box size="0.30 0.24 0.094"/>
+            </geometry>
+            <material name="white"/>
+        </collision>
     </link>
 
     <!-- Front Left Wheel -->
@@ -58,6 +62,13 @@
             </geometry>
             <material name="blue"/>
         </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+            <material name="blue"/>
+        </collision>
     </link>
 
     <!-- Front Right Wheel -->
@@ -77,6 +88,13 @@
             </geometry>
             <material name="blue"/>
         </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+            <material name="blue"/>
+        </collision>
     </link>
 
     <!-- Back Left Wheel -->
@@ -96,6 +114,13 @@
             </geometry>
             <material name="blue"/>
         </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+            <material name="blue"/>
+        </collision>
     </link>
 
     <!-- Back Right Wheel -->
@@ -115,6 +140,13 @@
             </geometry>
             <material name="blue"/>
         </visual>
+        <collision>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <cylinder radius="0.05" length="0.05"/>
+            </geometry>
+            <material name="blue"/>
+        </collision>
     </link>
 
 </robot>
