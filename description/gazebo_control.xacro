@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro"  name="robot">
 
-    <gazebo>
+  <gazebo>
     <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
       <commandTopic>cmd_vel</commandTopic>
       <odometryTopic>odom</odometryTopic>
@@ -10,4 +10,12 @@
       <robotBaseFrame>base_link</robotBaseFrame>
     </plugin>
   </gazebo>
+
+  <gazebo reference="my_bot">
+  <plugin name="gazebo_ros_state" filename="libgazebo_ros_state.so">
+    <!-- Update rate, in Hz -->
+    <updateRate>10.0</updateRate>
+  </plugin>
+</gazebo>
+
 </robot>

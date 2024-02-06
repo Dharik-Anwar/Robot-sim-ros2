@@ -52,13 +52,13 @@
             <material name="white"/>
         </collision>
 
-        <visual>
+        <!-- <visual>
             <origin xyz="0.0 0.0 0.047" rpy="0.0 0.0 0.0"/>
             <geometry>
                 <box size="0.1 0.36 0.094"/>
             </geometry>
             <material name="white"/>
-        </visual>
+        </visual> -->
         
     </link>
 
